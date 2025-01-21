@@ -102,6 +102,10 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .navbar .logo {
+        width: 80px; /* Adjusted width for smaller screens */
+        height: 80px; /* Adjusted height for smaller screens */
+    }
     form {
         padding: 15px;
     }
