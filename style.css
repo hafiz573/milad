@@ -16,33 +16,34 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0; /* Align the navbar to the left */
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6); /* Changed transparency to 60% */
-    padding: 25px 0; /* Slightly increased padding for larger navbar */
+    background-color: rgba(255, 255, 255, 0.6); /* Transparency */
+    padding: 15px 0; /* Adjust padding for navbar */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    z-index: 1000;
     display: flex;
-    justify-content: center; /* Center the logo */
-    align-items: center;
-    padding: 0 25px;
-}
-
-.navbar h1 {
-    margin: 0;
-    color: #4CAF50;
-    flex: 1;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif; /* Changed font to Times New Roman */
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-start; /* Align items to the left */
+    z-index: 1000;
+    height: 50px; /* Set a fixed height for the navbar */
 }
 
 .navbar .logo {
     width: 120px; /* Increased width */
-    height: 120px; /* Increased height */
+    height: 90px; /* Increased height */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.4; /* Set transparency to 40% */
+    opacity: 1; /* Set transparency to 40% */
+    margin-left: 15px; /* Added space from the left */
+}
+
+.navbar h1 {
+    margin: 0;
+    color: #00ff08;
+    flex: 1;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif; /* Changed font to Times New Roman */
 }
 
 form {
@@ -59,7 +60,7 @@ h1 {
     color: #4CAF50;
     text-align: center;
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -102,11 +103,15 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .navbar {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
     .navbar .logo {
         width: 80px; /* Adjusted width for smaller screens */
         height: 80px; /* Adjusted height for smaller screens */
     }
     form {
         padding: 15px;
+        margin-top: 70px; /* Adjust form margin to prevent overlap with navbar */
     }
 }
