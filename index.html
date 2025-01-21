@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Absensi</h1>
+  <form id="attendanceForm">
+    <label for="name">Nama</label>
+    <select id="name" required>
+      <option value="">-- Pilih Nama --</option>
+      <option value="John">John</option>
+      <option value="Jane">Jane</option>
+      <option value="Other">Lainnya</option>
+    </select>
+    <input type="text" id="otherName" placeholder="Masukkan Nama" style="display: none;" />
+
+    <label for="institution">Instansi</label>
+    <select id="institution" required>
+      <option value="">-- Pilih Instansi --</option>
+      <option value="Company A">Company A</option>
+      <option value="Company B">Company B</option>
+      <option value="Other">Lainnya</option>
+    </select>
+    <input type="text" id="otherInstitution" placeholder="Masukkan Instansi" style="display: none;" />
+
+    <button type="submit">Submit</button>
+  </form>
+  <div id="status"></div>
+
+  <script>
+    const form = document.getElementById('attendanceForm');
+    const nameDropdown = document.getElementById('name');
+    const otherNameInput = document.getElementById('otherName');
+    const institutionDropdown = document.getElementById('institution');
+    const otherInstitutionInput = document.getElementById('otherInstitution');
+    const statusDiv = document.getElementById('status');
+
+    // Tampilkan input teks jika memilih "Lainnya"
+    nameDropdown.addEventListener('change', () => {
+      otherNameInput.style.display = nameDropdown.value === 'Other' ? 'block' : 'none';
+      otherNameInput.required = nameDropdown.value === 'Other';
+    });
+
+    institutionDropdown.addEventListener('change', () => {
+      otherInstitutionInput.style.display = institutionDropdown.value === 'Other' ? 'block' : 'none';
+      otherInstitutionInput.required = institutionDropdown.value === 'Other';
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = nameDropdown.value === 'Other' ? otherNameInput.value : nameDropdown.value;
+      const institution = institutionDropdown.value === 'Other' ? otherInstitutionInput.value : institutionDropdown.value;
+
+      if (!name || !institution) {
+        statusDiv.textContent = 'Harap isi semua field!';
+        statusDiv.style.color = 'red';
+        return;
+      }
+
+      const data = { name, institution };
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbwQit9JdS9UHe99HhoG89cI5Elg7VGmq1ki6SKnHcSwiaQYGa7Z1foLSrHbV24fmZ1v/exec', {
+          method: 'POST',
+          mode: 'no-cors', // CORS bypass mode
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        
+        // Redirect to the next page with a thank you message
+        window.location.href = "thankyou.html";  // Replace with your new thank you page URL
+      } catch (error) {
+        statusDiv.textContent = 'Terjadi kesalahan, coba lagi.';
+        statusDiv.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
