@@ -97,6 +97,65 @@ button:hover {
     background-color: #45a049;
 }
 
+.navbarthank {
+    position: fixed;
+    top: 0;
+    left: 0; /* Align the navbar to the left */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparency */
+    padding: 15px 0; /* Adjust padding for navbar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-start; /* Align items to the left */
+    z-index: 1000;
+    height: 50px; /* Set a fixed height for the navbar */    position: fixed;
+    top: 0;
+    left: 0; /* Align the navbar to the left */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparency */
+    padding: 15px 0; /* Adjust padding for navbar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-start; /* Align items to the left */
+    z-index: 1000;
+    height: 50px; /* Set a fixed height for the navbar */
+}
+
+.navbarthank .logothank {
+    width: 120px; /* Increased width */
+    height: 90px; /* Increased height */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1; /* Set transparency to 40% */
+    margin-left: 15px; /* Added space from the left */
+}
+
+.thankyou-message {
+    background-color: rgba(255, 255, 255, 0.6); /* Changed transparency to 60% */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 80px; /* Adjust for navbar height */
+}
+
+.thankyou-message h1 {
+    color: #4CAF50;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.thankyou-message p {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
 #status {
     text-align: center;
     margin-top: 10px;
@@ -111,6 +170,10 @@ button:hover {
         height: 80px; /* Adjusted height for smaller screens */
     }
     form {
+        padding: 15px;
+        margin-top: 70px; /* Adjust form margin to prevent overlap with navbar */
+    }
+    .thankyou-message {
         padding: 15px;
         margin-top: 70px; /* Adjust form margin to prevent overlap with navbar */
     }
