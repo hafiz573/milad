@@ -19,18 +19,18 @@ body {
     left: 0; /* Align the navbar to the left */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.6); /* Transparency */
-    padding: 15px 0; /* Adjust padding for navbar */
+    padding: 20px 0; /* Adjust padding for navbar */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center; /* Vertically center the content */
     justify-content: flex-start; /* Align items to the left */
     z-index: 1000;
-    height: 50px; /* Set a fixed height for the navbar */
+    height: 70px; /* Set a new fixed height for the navbar */
 }
 
 .navbar .logo {
     width: 120px; /* Increased width */
-    height: 90px; /* Increased height */
+    height: 100px; /* Adjusted height for the logo */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -44,6 +44,8 @@ body {
     flex: 1;
     text-align: center;
     font-family: 'Times New Roman', Times, serif; /* Changed font to Times New Roman */
+    font-size: 40px; /* Adjust font size */
+    line-height: 70px; /* Ensure the text is vertically centered within the navbar */
 }
 
 form {
@@ -53,7 +55,7 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
-    margin-top: 80px; /* Adjust for navbar height */
+    margin-top: 100px; /* Adjust for new navbar height */
 }
 
 h1 {
@@ -109,23 +111,12 @@ button:hover {
     align-items: center; /* Vertically center the content */
     justify-content: flex-start; /* Align items to the left */
     z-index: 1000;
-    height: 50px; /* Set a fixed height for the navbar */    position: fixed;
-    top: 0;
-    left: 0; /* Align the navbar to the left */
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.6); /* Transparency */
-    padding: 15px 0; /* Adjust padding for navbar */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: flex-start; /* Align items to the left */
-    z-index: 1000;
-    height: 50px; /* Set a fixed height for the navbar */
+    height: 70px; /* Set a new fixed height for the navbar */
 }
 
 .navbarthank .logothank {
     width: 120px; /* Increased width */
-    height: 90px; /* Increased height */
+    height: 110px; /* Adjusted height for the logo */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -141,7 +132,7 @@ button:hover {
     text-align: center;
     max-width: 400px;
     width: 100%;
-    margin-top: 80px; /* Adjust for navbar height */
+    margin-top: 100px; /* Adjust for new navbar height */
 }
 
 .thankyou-message h1 {
@@ -161,20 +152,31 @@ button:hover {
     margin-top: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .navbar {
-        padding: 15px 0; /* Adjust padding for smaller screens */
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+    .navbar h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+        line-height: 60px; /* Ensure the text is vertically centered within the navbar */
     }
     .navbar .logo {
-        width: 80px; /* Adjusted width for smaller screens */
-        height: 80px; /* Adjusted height for smaller screens */
+        width: 100px; /* Further adjusted width for smaller screens */
+        height: 60px; /* Further adjusted height for smaller screens */
     }
     form {
         padding: 15px;
-        margin-top: 70px; /* Adjust form margin to prevent overlap with navbar */
+        margin-top: 90px; /* Adjust form margin to prevent overlap with new navbar height */
     }
     .thankyou-message {
         padding: 15px;
-        margin-top: 70px; /* Adjust form margin to prevent overlap with navbar */
+        margin-top: 90px; /* Adjust form margin to prevent overlap with new navbar height */
+    }
+    select, input[type="text"], button {
+        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    button {
+        font-size: 14px; /* Adjust button font size for smaller screens */
     }
 }
