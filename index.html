@@ -33,6 +33,7 @@
     <button type="submit">Submit</button>
   </form>
   <div id="status"></div>
+  <div id="loading" style="display: none;">Loading...</div> <!-- Add loading indicator -->
   <footer>
     <p>&copy; 2025 Hafiz And Habibi (XI RPL)</p>
   </footer>
@@ -44,6 +45,7 @@
     const institutionDropdown = document.getElementById('institution');
     const otherInstitutionInput = document.getElementById('otherInstitution');
     const statusDiv = document.getElementById('status');
+    const loadingDiv = document.getElementById('loading'); // Get loading indicator
 
     // Tampilkan input teks jika memilih "Lainnya"
     nameDropdown.addEventListener('change', () => {
@@ -70,6 +72,8 @@
 
       const data = { name, institution };
 
+      loadingDiv.style.display = 'block'; // Show loading indicator
+
       try {
         await fetch('https://script.google.com/macros/s/AKfycbwQit9JdS9UHe99HhoG89cI5Elg7VGmq1ki6SKnHcSwiaQYGa7Z1foLSrHbV24fmZ1v/exec', {
           method: 'POST',
@@ -83,6 +87,8 @@
       } catch (error) {
         statusDiv.textContent = 'Terjadi kesalahan, coba lagi.';
         statusDiv.style.color = 'red';
+      } finally {
+        loadingDiv.style.display = 'none'; // Hide loading indicator
       }
     });
   </script>
