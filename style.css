@@ -7,7 +7,7 @@ body {
     margin: 0;
     font-family: Arial, 'Times New Roman';
     color: #333;
-    background-image: url('IMG_6471.JPG'); /* Background */
+    background-image: url('IMG_6464.JPG'); /* Background */
     background-size: cover; /* Ensure the background image covers the entire area */
     background-repeat: no-repeat;
     background-position: center; /* Center the background image */
@@ -182,6 +182,7 @@ footer {
 @media (max-width: 500px) {
     body {
         background-size: cover;
+        background-image: url('IMG_20250123_094835.jpg');
         background-position: center;
         background-repeat: no-repeat;
         height: 15,24cm;
