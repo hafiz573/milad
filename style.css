@@ -179,7 +179,7 @@ footer {
     z-index: 1001;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     body {
         background-size: cover;
         background-image: url('IMG_20250123_094833.jpg');
